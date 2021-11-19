@@ -57,10 +57,9 @@ public class DoubleLinkedList<E>{
 
 	public void addToRear(E data) {
 		if (size==0) {
-			this.rear = new Node<E>(null, null);
-			this.front = new Node<E>(data, rear);
-			this.rear.prev = this.front;
-			this.front.prev = null;
+			rear = new Node<E>(null, null);
+			front = new Node<E>(data, rear);
+			rear.prev = this.front;
 			size++;
 		}else if(rear.data==null) {
 			Node<E> temp = new Node<E>(null, null);
