@@ -1,3 +1,5 @@
+import java.security.Principal;
+
 public class BinaryTree<E>{
     class Node<E> {
 		
@@ -83,7 +85,7 @@ public class BinaryTree<E>{
         str = pre_helper(head.greater, str);
         str = pre_helper(head.less, str);
         str = head.toString() + ", " +str;
-        return str;
+        return str.substring(0, str.length()-2);
     }
 
     private String pre_helper(Node<E> temp, String str){
@@ -98,5 +100,24 @@ public class BinaryTree<E>{
         return temp.data.toString() + ", "  + str;
     }
 
+    public String in_order(){
+        String str = "";
+        str = in_helper(head.less, str);
+        str += ", " + head.toString();
+        str = in_helper(head.greater, str);
+        return str.substring(2);
+    }
+
+    private String in_helper(Node<E> temp, String str){
+        if(temp == null){
+            return str;
+        }else{
+            str = in_helper(temp.less, str);
+            str = str + ", " + temp.data.toString();
+            str = in_helper(temp.greater, str);
+        }
+
+        return str;
+    }
 
 }

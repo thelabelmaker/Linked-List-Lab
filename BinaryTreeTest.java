@@ -13,6 +13,9 @@ public class BinaryTreeTest {
         System.out.print(tree.pre_order()+"\n\n");
 
         System.out.print("Post Order: ");
-        System.out.print(tree.post_order()+"\n");
+        System.out.print(tree.post_order()+"\n\n");
+
+        System.out.print("In Order: ");
+        System.out.print(tree.in_order()+"\n");
     }
 }
